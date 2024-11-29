@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="ikoner/css/fontawesome.css">
     <link rel="stylesheet" href="ikoner/css/brands.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Eksamen | Forside</title>
+    <title>Eksamen | Checkout</title>
 </head>
 <body>
     <div id="grid-container">
@@ -20,22 +20,23 @@
                     </form>
                     <ul class="flex-menu" id="menu">
                         <li><a href="index.html">Hjem</a></li>
-                        <li><a href="product.html">Produkter</a></li>
-                    </ul>
-                    <a href="index.html" id="logo">
-                        <!--image by Vadim Sherbakov from <a href="https://fastly.picsum.photos/id/60/1920/1200">Lorem picsum<a/>-->
-                        <img src="https://picsum.photos/id/60/1920/1200" alt="logo">
-                    </a>
-                    <ul class="flex-menu">
-                        <li><a href="#kategori">Kategorier</a></li>
+                        <li><a href="#mest-pop">Produkter</a></li>
+                        <li>
+                            <a href="index.html" id="logo">
+                                <!--image by Vadim Sherbakov from <a href="https://fastly.picsum.photos/id/60/1920/1200">Lorem picsum<a/>-->
+                                <img src="https://picsum.photos/id/60/1920/1200" alt="logo">
+                            </a>
+                        </li>
+                        
+                        <li><a href="#pop-cat">Kategorier</a></li>
                         <li><a href="#footer">Kontakt Oss</a></li>
                         <li><i class="fa-solid fa-user"></i></li>
                         <li><i class="fa-solid fa-heart"></i></li>
-                        <li><i class="fa-solid fa-cart-shopping"></i><a href="checkout.html"></a></li>
-                    </ul>
+                        <li><a href="checkout.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                    </ul> 
                 </nav>
         </header>
-        <main>
+        <main id="betal">
             <section class="bag">
                 <h3>1. DIN SHOPPINGBAG</h3>
                 <article class="lignende">
@@ -63,94 +64,113 @@
                     <p>Farge: svart</p>
                 </article>
             </section>
-            <section>
-                <h3>2. DINE OPPLYSNINGER</h3>
-                <form method="post">
-                    <h4>Leveringsadresse</h4>
-                    <label for="navn">Fornavn</label>
-                    <input type="text" name="navn" id="navn" placeholder="Nora*" pattern="[A-Za_zæøåÆØÅ ]{2,}]" required>
-                    <label for="enavn">Etternavn</label>
-                    <input type="text" name="enavn" id="enavn" placeholder="Nordmann*" pattern="[A-Za_zæøåÆØÅ ]{2,}]" required>
-                    <label>Gateadresse
-                        <input type="text" name="adress" placeholder="B R A Veien" required>
-                    </label>
-                    <label>Postnummer
-                        <input type="number" min="4" max="4" required>
-                    </label>
-                    <label>Poststed
-                        <input type="text" name="post" placeholder="Halden*" pattern="[A-Za_zæøåÆØÅ ]{2,}]" required>
-                    </label>
+            <section class="info-row">
+                <div class="info-col">
+                    <h4>2. DINE OPPLYSNINGER</h4>
+                    <h5>Leveringsadresse</h5>
+                    <form method="post"> 
+                        <div class="names">
+                            <label for="navn">Fornavn</label>
+                            <input type="text" name="navn" id="navn" placeholder="Nora*" pattern="[A-Za_zæøåÆØÅ ]{2,}]" required>
+                            <label for="enavn">Etternavn</label>
+                            <input type="text" name="enavn" id="enavn" placeholder="Nordmann*" pattern="[A-Za_zæøåÆØÅ ]{2,}]" required>
+                        </div>
+                        <label>Gateadresse
+                            <input type="text"  class="adress" name="adress" placeholder="B R A Veien" required>
+                        </label>
+                    </form>
+                    <form method="post" class="post">
+                        <label class="post">Postnummer
+                            <input type="number" min="4" max="4" required>
+                        </label>
+                        <label class="post">Poststed
+                            <input type="text" name="post" placeholder="Halden*" pattern="[A-Za_zæøåÆØÅ ]{2,}]" required>
+                        </label>
+                    </form>       
                     <h4>Kontaktinformasjon</h4>
-                    <label>E-post
-                        <input type="email" name="email" placeholder="eksempel@hiof.no" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
-                    </label>
-                    <label>Telefon
-                        <input type="tel" name="telefon" pattern="[0-9]{8,12}" required>
-                    </label>
-                    <input type="submit" value="Lagre">
-                    <input type="reset" value="Avbryt">
-                </form>
+                    <form method="post">
+                        <label>E-post
+                            <input type="email" name="email" placeholder="eksempel@hiof.no" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
+                        </label>
+                        <label>Telefon
+                            <input type="tel" name="telefon" pattern="[0-9]{8,12}" required>
+                        </label>
+                    </form>
+                    <form method="post">
+                        <button class="check-btn" type="submit">Lagre</button>
+                        <button class="check-btn" type="reset">Avbryt</button>
+                    </form>
+                </div>
             </section>
-            <section>
+            <section class="info-row">
                 <h3>3. LEVERING</h3>
-                <form method="post">
-                    <h4>LEVERINGSVALG</h4>
+                <form method="post" class="horisontal-check">
+                    <h5>LEVERINGSVALG</h5>
                     <label>Express Hjemlevering
                         <input type="radio" name="valg" required>
+                        <span class="checkmark"></span>
                     </label>
                     <label>Ekspress Pakke til Utleveringssted
                         <input type="radio" name="valg" required>
+                        <span class="checkmark"></span>
                     </label>
                     <label>Standard Hjemlevering
                         <input type="radio" name="valg" required>
+                        <span class="checkmark"></span>
                     </label>
                 </form>
             </section>
-            <section>
+            <section class="info-row">
                 <h3>4. BETALING</h3>
-                <form method="post">
-                    <label>Kortnummer
+                <form method="post" class="delivery">
+                    <label class="card-number">Kortnummer
                         <input type="text" name="kortnummer" placeholder="111122****3333" required>
                     </label>
-                    <label>Utløpsdato
-                        <input type="date" name="utløpsdato" min="2024-12-31" required>
-                    </label>
-                    <label>CVC/CVV
-                        <input type="text" name="cvv" placeholder="456" required>
-                        
-                    </label>
-                    <h5>Å betale inkl. mva.</h5>
-                    <h3>1 999 kr</h3>
-                    <input type="submit" name="fullfor" class="btn">
+                    <div class="payment">
+                        <div class="utlop">
+                            <label for="utløpsdato">Utløpsdato
+                            <input type="date" id="utløpsdato" name="utløpsdato" min="2024-12-31" required>
+                            </label>
+
+                            <label for="cvv">CVC/CVV
+                                <input type="text" id="cvv" name="cvv" placeholder="456" required>
+                            </label>
+                        </div>
+                    </div>
+                    <article class="total-price">
+                        <h5>Å betale inkl. mva.</h5>
+                        <h3>1 999 kr</h3>
+                    </article>    
+                    <button class="check-btn" type="submit">Fullfør kjøp</button>
                     <h5>Du bekrefter herved at opplysningene og dokumentene du har
                         oppgitt er korrekte og fullstendige. Leverandøren forbeholder seg
                         retten til å heve eller avslutte avtaleforholdet dersom det foreligger
                         uriktige eller ufullstendige opplysninger.</h5>
-                    <label>Ja takk! Send nyhetsbrev til meg
-                        <input type="checkbox" name="nyhet">
+                    <label>
+                        <input type="checkbox" name="nyhet"> Ja takk! Send nyhetsbrev til meg
                     </label>
                     <label>
-                        Jeg ønsker å motta tektmeldinger med tilbud og nyheter.
-                        <input type="checkbox" name="tilbud">
+                        
+                        <input type="checkbox" name="tilbud"> Jeg ønsker å motta tektmeldinger med tilbud og nyheter.
                     </label>
                 </form>
             </section>
         </main>
         <footer id="footer">
             <section>
-                <h2>Logo</h2>
+                <h4>Logo</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </section>
             <section>
-                <h3>Kontakt</h3>
+                <h5>Kontakt</h5>
                 <ul>
-                    <li><h5>Adresse: B R A Veien, 1757 Halden</h5></li>
-                    <li><h5>Telefon: 99 99 99</h5></li>
-                    <li><h5>E-post: Sayotikt@hiof.no</h5></li>
+                    <li><h6>Adresse: B R A Veien, 1757 Halden</h6></li>
+                    <li><h6>Telefon: 99 99 99</h6></li>
+                    <li><h6>E-post: Sayotikt@hiof.no</h6></li>
                 </ul>
             </section>
             <section>
-                <h3>Snarveier</h3>
+                <h5>Snarveier</h5>
                 <ul>
                     <li><a href="#produkt">Produkter</a></li>
                     <li><a href="#kategori">Kategorier</a></li>
@@ -159,7 +179,7 @@
                 </ul>
             </section>
             <section>
-                <h3>Sosiale medier</h3>
+                <h5>Sosiale medier</h5>
                 <ul>
                     <li><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a></li>
                     <li><a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a></li>
